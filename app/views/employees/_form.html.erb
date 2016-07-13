@@ -1,0 +1,44 @@
+<%= simple_form_for(@employee) do |f| %>
+  <div class="row">
+    <div class="col-md-3">
+      <%= f.input :cpf %>
+    </div>
+    <div class="col-md-6">
+      <%= f.input :name %>
+    </div>
+    <div class="col-md-3">
+      <%= f.input :date_of_birth, as: :string, input_html: {class:"js-simple-date"} %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <%= f.input :address %>
+    </div>
+    <div class="col-md-2">
+      <%= f.input :address_number %>
+    </div>
+    <div class="col-md-2">
+      <%= f.input :address_compl %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <%= f.input :address_district %>
+    </div>
+    <div class="col-md-4">
+      <%= f.input :address_city %>
+    </div>
+    <div class="col-md-2">
+      <%= f.input :address_state %>
+    </div>
+    <div class="col-md-2">
+      <%= f.input :zip_code %>
+    </div>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit 'Salvar', class: 'btn btn-default' %>
+  </div>
+<% end %>
+

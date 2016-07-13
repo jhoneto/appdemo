@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Funcionários</h1>
+<%= link_to 'Adicionar', new_employee_path, class: 'btn btn-primary' %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>CPF</th>
+      <th>Nome</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @employees.each do |employee| %>
+      <tr>
+        <td><%= employee.cpf %></td>
+        <td><%= employee.name %></td>
+        <td><%= link_to 'Ver', employee %></td>
+        <td><%= link_to 'Editar', edit_employee_path(employee) %></td>
+        <td><%= link_to 'Excluir', employee, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
